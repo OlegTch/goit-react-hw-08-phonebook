@@ -24,10 +24,9 @@ const ContactList = () => {
     <>
       {contacts.length > 0 ? (
         <ul className={styles.contactsList}>
-          {filteredContacts.map(({ id, name, phone }) => {
-            console.log(id, name, phone);
-            return <ContactItem key={id} id={id} name={name} number={phone} />;
-          })}
+          {filteredContacts.map(({ id, name, number }) => (
+            <ContactItem key={id} id={id} name={name} number={number} />
+          ))}
         </ul>
       ) : (
         <p className={styles.emptyText}>Contacts list is empty</p>

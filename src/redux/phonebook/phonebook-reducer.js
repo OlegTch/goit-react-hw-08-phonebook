@@ -11,12 +11,10 @@ const { changeFilter } = contactsActions;
 const items = createReducer([], {
   [fetchContacts.fulfilled]: (_, { payload }) => payload,
   [addContact.fulfilled]: (state, { payload }) => {
-    console.log(state);
     return [...state, payload];
   },
 
   [deleteContact.fulfilled]: (state, { payload }) => {
-    console.log(payload);
     return state.filter(contact => contact.id !== payload.id);
   },
 });
@@ -36,7 +34,7 @@ const loading = createReducer(false, {
 const error = createReducer(null, {
   [fetchContacts.rejected]: (_, action) => toast.error('contact fetch error'),
   [fetchContacts.pending]: () => null,
-  [addContact.rejected]: (_, action) => toast.error('add delete error'),
+  [addContact.rejected]: (_, action) => toast.error('contact add error'),
   [addContact.pending]: () => null,
   [deleteContact.rejected]: (_, action) => toast.error('contact delete error'),
   [deleteContact.pending]: () => null,

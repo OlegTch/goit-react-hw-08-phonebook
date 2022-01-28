@@ -1,29 +1,13 @@
-.form {
-  padding: 15px;
-  margin: 0 auto 20px;
-  width: 320px;
-  border: 2px solid #212121;
-  font-size: 18px;
-}
-
-.label {
-  display: block;
+.thumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.2;
 }
 
-.input {
-  margin-bottom: 30px;
-  line-height: 1.1;
-}
-
-.input:hover,
-.input:focus,
-.input:active {
-  border: 2px solid #2196f3;
-  border-radius: 5px;
+.name {
+  font-weight: 700;
+  margin: 0 12px;
 }
 
 .button {

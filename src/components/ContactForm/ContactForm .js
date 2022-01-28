@@ -50,16 +50,16 @@ function ContactForm() {
       contact => name.toLowerCase() === contact.name.toLowerCase(),
     );
     const checkContactsNumber = contacts.find(
-      contact => number.toLowerCase() === contact.phone.toLowerCase(),
+      contact => number.toLowerCase() === contact.number.toLowerCase(),
     );
     if (checkContactsName) {
       return onError(`${checkContactsName.name}`);
     }
     if (checkContactsNumber) {
-      return onError(`${checkContactsNumber.phone}`);
+      return onError(`${checkContactsNumber.number}`);
     }
 
-    dispatch(contactOperations.addContact({ name, phone: number }));
+    dispatch(contactOperations.addContact({ name, number: number }));
   };
 
   const onError = checkContacts => {
