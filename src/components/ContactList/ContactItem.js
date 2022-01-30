@@ -7,7 +7,7 @@ import styles from './ContactList.module.css';
 const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
-  const onDeleteContact = idx => dispatch(contactOperations.deleteContact(idx));
+  const onDeleteContact = id => dispatch(contactOperations.deleteContact(id));
 
   return (
     <li className={styles.contactsItem} id={id}>

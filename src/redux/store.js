@@ -15,8 +15,6 @@ import storage from 'redux-persist/lib/storage';
 import phonebookReducer from './phonebook/phonebook-reducer.js';
 import authReducer from './auth/auth-slice';
 
-// import persistReducer from 'redux-persist/es/persistReducer';
-
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -42,6 +40,3 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 //
-// export const storeItems = { store, persistor };
-//
-// export default store;

@@ -21,8 +21,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
     console.log(data);
     return data;
   } catch (error) {
-    // console.error();
-    toast.error('incorrect data entered');
+    toast.error('Error. Try again');
   }
 });
 
@@ -33,7 +32,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     return data;
   } catch (error) {
     console.error();
-    toast.error('incorrect data entered');
+    toast.error('Error. Try again');
   }
 });
 
@@ -45,7 +44,7 @@ const logOut = createAsyncThunk('auth/logout', async () => {
     return data;
   } catch (error) {
     console.error();
-    toast.error('incorrect data entered');
+    toast.error('Error. Try again');
   }
 });
 
@@ -57,14 +56,13 @@ const fetchCurrentUser = createAsyncThunk(
     if (persistedToken === null) {
       console.log('token is empty');
       return thunkAPI.rejectWithValue();
-      //   return state;
     }
     token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      toast.error('Error');
+      toast.error('Error. Try again');
     }
   },
 );

@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// axios.defaults.baseURL = 'https://61e41facfbee6800175eb1e6.mockapi.io';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
@@ -24,9 +23,11 @@ const addContact = createAsyncThunk(
 const deleteContact = createAsyncThunk(
   'contacts/deleteContacts',
   async contactId => {
-    const { data } = await axios.delete(`/contacts/${contactId}`);
+    // const { data } = await axios.delete(`/contacts/${contactId}`);
+    await axios.delete(`/contacts/${contactId}`);
     toast.success('contact was deleted');
-    return data;
+    // console.log(data);
+    return contactId;
   },
 );
 
