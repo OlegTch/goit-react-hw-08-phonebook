@@ -38,7 +38,7 @@ const RegisterView = () => {
   };
 
   return (
-    <div>
+    <div className={styles.thumb}>
       <h1 className={styles.title}> Please register! </h1>
 
       <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">

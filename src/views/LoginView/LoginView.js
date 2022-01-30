@@ -33,7 +33,7 @@ const LoginView = () => {
   };
 
   return (
-    <div>
+    <div className={styles.thumb}>
       <h1 className={styles.title}>Please login!</h1>
 
       <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
